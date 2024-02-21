@@ -1,4 +1,7 @@
-# gol-clean-arch
+# go-clean-architecture-template
+
+# Description
+This is an example of implementation of Clean Architecture in Golang.
 
 # Install Tools
 ```shell
