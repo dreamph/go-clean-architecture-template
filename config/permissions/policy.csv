@@ -1,0 +1,29 @@
+#===========================================
+# Admin
+#===========================================
+p,ADM,company,create
+p,ADM,company,update
+p,ADM,company,find-by-id
+p,ADM,company,delete
+p,ADM,company,list
+#===========================================
+
+#===========================================
+# Super Admin
+#===========================================
+p,ADM,company,create
+p,ADM,company,update
+p,ADM,company,find-by-id
+p,ADM,company,delete
+p,ADM,company,list
+#===========================================
+
+#===========================================
+# User
+#===========================================
+p,ADM,company,create
+p,ADM,company,update
+p,ADM,company,find-by-id
+p,ADM,company,delete
+p,ADM,company,list
+#===========================================

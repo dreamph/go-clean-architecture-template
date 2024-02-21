@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig connectionConfig="{&quot;serverAliveInterval&quot;:300}" host="52.187.125.93" id="b4c68939-ad54-41df-bb2a-ae2d57ece681" keyPath="$USER_HOME$/devSandbox.pem" port="22" nameFormat="DESCRIPTIVE" username="devsanboxadmin" useOpenSSHConfig="true" />
+    </configs>
+  </component>
+</project>

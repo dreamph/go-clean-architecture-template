@@ -1,0 +1,82 @@
+linters-settings:
+  maligned:
+    # print struct with more effective memory layout or not, false by default
+    suggest-new: true
+  errcheck:
+    check-type-assertions: true
+    #check-blank: true
+  goconst:
+    min-len: 2
+    min-occurrences: 3
+  gocritic:
+    enabled-tags:
+      - diagnostic
+      - experimental
+      - opinionated
+      - performance
+      - style
+  govet:
+    check-shadowing: true
+  nolintlint:
+    require-explanation: true
+    require-specific: true
+  tagliatelle:
+    case:
+      rules:
+        json: camel
+        yaml: camel
+        xml: camel
+        bson: camel
+        mapstructure: kebab
+  cyclop:
+    max-complexity: 20
+  forbidigo:
+    forbid:
+      - 'ioutil\.*'
+
+linters:
+  disable-all: true
+  enable:
+#    - depguard
+#    - dupl
+    - errcheck
+    - goconst
+    - goimports
+#    - gocyclo
+    - gosec
+    - gosimple
+#    - govet
+    - ineffassign
+    - misspell
+    - nakedret
+    - staticcheck
+    - typecheck
+    - unconvert
+    - unparam
+#    - cyclop
+    - bodyclose
+    - usestdlibvars
+    - tagliatelle
+    - unused
+    - bidichk
+    - durationcheck
+    - exportloopref
+    - whitespace
+    - thelper
+    - tparallel
+    - wastedassign
+    - forbidigo
+
+run:
+  tests: false
+  timeout: 5m
+  issues-exit-code: 1
+  skip-dirs:
+    - docs
+  go: '1.22'
+
+issues:
+  exclude-use-default: false
+  max-issues-per-linter: 0
+  max-same-issues: 0
+

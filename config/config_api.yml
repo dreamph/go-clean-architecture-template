@@ -1,0 +1,36 @@
+app:
+  name: api
+  group: backend
+  env: ${ENV:local}
+  prodMode: false
+  port: 3201
+  bodyLimit: 40
+  contextPath:
+  jwt:
+    issuer: api
+    secretKey: ${JWT_SECRET_KEY}
+    expirationMinutes: 30
+    refreshExpirationMinutes: 60
+
+permissions:
+  modelFile: config/permissions/model.conf
+  policyFile: config/permissions/policy.csv
+
+restClient:
+  debug: true
+  timeoutInSecond: 120
+
+database:
+  host: ${DB_HOST}
+  port: ${DB_PORT}
+  dbName: ${DB_NAME}
+  user: ${DB_USER}
+  password: ${DB_PASSWORD}
+  connectTimeout: 5
+  enableLog: true
+  autoMigrate: false
+
+log:
+  filePath: ./logs/app.log
+  level: debug
+  format: json

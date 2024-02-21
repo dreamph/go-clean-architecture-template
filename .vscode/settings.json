@@ -1,0 +1,30 @@
+{
+    "editor.formatOnSave": true,
+    "go.buildOnSave": "off",
+    "go.lintOnSave": "workspace",
+    "go.vetOnSave": "workspace",
+    "go.buildTags": "",
+    "go.buildFlags": [],
+    "go.vetFlags": [],
+    "go.testOnSave": false,
+    "go.coverOnSave": false,
+    "go.useCodeSnippetsOnFunctionSuggest": true,
+    "go.formatTool": "goimports",
+    "go.formatFlags": [],
+    "go.goroot": "",
+    "go.gopath": "",
+    "go.inferGopath": false,
+    "go.gocodeAutoBuild": false,
+    "go.autocompleteUnimportedPackages": true,
+    "go.liveErrors": {
+        "enabled": true,
+        "delay": 500
+    },
+    "go.testFlags": [
+        "-v"
+    ],
+    "go.lintTool":"golangci-lint",
+    "go.lintFlags": [
+        "--fast"
+    ]
+}

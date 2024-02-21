@@ -1,0 +1,3 @@
+defaultPlatforms:
+  - linux/amd64
+defaultBaseImage: alpine
