@@ -3,6 +3,8 @@ package repomodels
 import (
 	"backend/internal/core/models"
 	"backend/internal/domain"
+
+	"github.com/dreamph/dbre"
 )
 
 type CompanyListCriteria struct {
@@ -12,7 +14,7 @@ type CompanyListCriteria struct {
 	HasP12File  int32  `json:"hasP12File" example:"20"`
 
 	Limit *models.PageLimit `json:"limit"`
-	Sort  *models.Sort      `json:"sort"`
+	Sort  *dbre.Sort        `json:"sort"`
 }
 
 type CompanyInfoData struct {

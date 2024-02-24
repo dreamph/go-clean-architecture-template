@@ -30,6 +30,10 @@ github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSs
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc h1:U9qPSI2PIWSS1VwoXQT9A3Wy9MM3WgvqSxFWenqJduM=
 github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
+github.com/dreamph/dbre v0.0.0-20240224125731-1eb981ba20ae h1:d0YPNpwryGHxyUmL5NqDpqTGrat3XdiIiRr+z+WpFzE=
+github.com/dreamph/dbre v0.0.0-20240224125731-1eb981ba20ae/go.mod h1:QrT2ifFUQRw6o8p56Wdob96OXZXDJBhmxj4diJsaUuk=
+github.com/dreamph/validation v0.0.0-20240221035131-c62b448ab1bf h1:9D53s+PtVDNWgUgQdaKtqypGI7ow7WHrEz/Ck8/5XQc=
+github.com/dreamph/validation v0.0.0-20240221035131-c62b448ab1bf/go.mod h1:VcMTJws2ZUYhmwiRVWoo7gWWySHuGDdGokU58Et9emE=
 github.com/ferluci/fast-realip v1.0.1 h1:zPi0iv7zgOOlM/qJt9mozLz5IjVRAezaqHJoQ0JJ/yI=
 github.com/ferluci/fast-realip v1.0.1/go.mod h1:Ag7xdRQ9GOCL/pwbDe4zJv6SlfYdROArc8O+qIKhRc4=
 github.com/frankban/quicktest v1.14.6 h1:7Xjx+VpznH+oBnejlPUj8oUpdxnVs4f8XU8WnHkI4W8=

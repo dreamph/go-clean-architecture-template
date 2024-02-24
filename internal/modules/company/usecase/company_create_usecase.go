@@ -10,8 +10,7 @@ import (
 	"context"
 	"time"
 
-	"backend/internal/core/validation"
-
+	"github.com/dreamph/validation"
 	"github.com/guregu/null"
 	errs "github.com/pkg/errors"
 )

@@ -8,8 +8,6 @@ import (
 	apicommons "backend/internal/core/api/commons"
 	"backend/internal/core/api/middleware"
 	"backend/internal/core/auth/jwt"
-	"backend/internal/core/database/query"
-	"backend/internal/core/database/query/bun"
 	"backend/internal/core/errors"
 	"backend/internal/core/logger"
 	"backend/internal/core/logger/zap"
@@ -19,6 +17,9 @@ import (
 	"backend/internal/repository"
 	"os"
 	"time"
+
+	"github.com/dreamph/dbre/query"
+	"github.com/dreamph/dbre/query/bun"
 
 	fileadapter "github.com/casbin/casbin/v2/persist/file-adapter"
 	fibercasbin "github.com/gofiber/contrib/casbin"
@@ -53,7 +54,7 @@ func Run() {
 		User:           cfg.Database.User,
 		Password:       cfg.Database.Password,
 		ConnectTimeout: cfg.Database.ConnectTimeout,
-		Logger:         log.WithOptionsAddCallerSkip(5),
+		Logger:         log.WithOptionsAddCallerSkip(5).Logger(),
 		TraceEnable:    false,
 	})
 	if err != nil {

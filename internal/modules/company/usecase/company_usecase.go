@@ -1,9 +1,10 @@
 package usecase
 
 import (
-	"backend/internal/core/database/query"
 	"backend/internal/modules/company"
 	"backend/internal/repository"
+
+	"github.com/dreamph/dbre/query"
 )
 
 type companyUseCase struct {

@@ -6,8 +6,8 @@ import (
 	"backend/internal/modules/company/models"
 	"context"
 
-	"backend/internal/core/validation"
-	"backend/internal/core/validation/is"
+	"github.com/dreamph/validation"
+	"github.com/dreamph/validation/is"
 
 	errs "github.com/pkg/errors"
 )

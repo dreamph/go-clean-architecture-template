@@ -1,8 +1,9 @@
 package utils
 
 import (
-	"backend/internal/core/database/query"
 	"backend/internal/core/models"
+
+	"github.com/dreamph/dbre/query"
 )
 
 // GetPageResult ...

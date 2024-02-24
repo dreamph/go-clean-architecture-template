@@ -2,9 +2,6 @@ package repository
 
 import (
 	"backend/internal/constants"
-	"backend/internal/core/database"
-	"backend/internal/core/database/query"
-	"backend/internal/core/database/query/bun"
 	"backend/internal/core/models"
 	"backend/internal/core/sql/builder"
 	"backend/internal/core/utils"
@@ -14,6 +11,9 @@ import (
 	"database/sql"
 	"strings"
 
+	"github.com/dreamph/dbre"
+	"github.com/dreamph/dbre/query"
+	"github.com/dreamph/dbre/query/bun"
 	"github.com/guregu/null"
 )
 
@@ -118,7 +118,7 @@ func (r *companyRepository) ListData(ctx context.Context, obj *repomodels.Compan
 	}
 
 	if total > 0 {
-		sortSQL, err := database.SortSQL(&database.SortParam{
+		sortSQL, err := dbre.SortSQL(&dbre.SortParam{
 			SortFieldMapping: map[string]string{
 				"id":           "c.id",
 				"code":         "c.code",
@@ -133,9 +133,9 @@ func (r *companyRepository) ListData(ctx context.Context, obj *repomodels.Compan
 				"updateByName": "c.update_by_name",
 			},
 			Sort: obj.Sort,
-			DefaultSort: &models.Sort{
+			DefaultSort: &dbre.Sort{
 				SortBy:        "updateDate",
-				SortDirection: database.DESC,
+				SortDirection: dbre.DESC,
 			},
 		})
 		if err != nil {

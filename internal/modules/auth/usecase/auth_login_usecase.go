@@ -8,8 +8,7 @@ import (
 	"context"
 	"strings"
 
-	"backend/internal/core/validation"
-
+	"github.com/dreamph/validation"
 	errs "github.com/pkg/errors"
 )
 

@@ -49,6 +49,8 @@ require (
 
 require (
 	github.com/casbin/govaluate v1.1.1 // indirect
+	github.com/dreamph/dbre v0.0.0-20240224125731-1eb981ba20ae // indirect
+	github.com/dreamph/validation v0.0.0-20240221035131-c62b448ab1bf // indirect
 	github.com/golang/mock v1.6.0 // indirect
 	github.com/jackc/puddle/v2 v2.2.1 // indirect
 	github.com/sagikazarmark/locafero v0.4.0 // indirect

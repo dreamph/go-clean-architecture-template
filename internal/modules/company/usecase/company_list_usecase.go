@@ -7,14 +7,18 @@ import (
 	"backend/internal/modules/company/models"
 	"context"
 
-	"backend/internal/core/validation"
-
+	"github.com/dreamph/validation"
 	errs "github.com/pkg/errors"
 )
 
 func (u *companyUseCase) ListValidate(request *models.CompanyListRequest) error {
 	err := validation.ValidateStruct(request,
-		validation.Field(&request.Limit, validation.Required, validation.PageLimit),
+		validation.Field(&request.Limit, validation.Required, validation.WithRule(func() error {
+			return validation.ValidateStruct(request.Limit,
+				validation.Field(&request.Limit.PageNumber, validation.Required),
+				validation.Field(&request.Limit.PageSize, validation.Required),
+			)
+		})),
 
 		// optional
 		validation.Field(&request.Status, validation.In(constants.StatusInActive, constants.StatusActive)),
