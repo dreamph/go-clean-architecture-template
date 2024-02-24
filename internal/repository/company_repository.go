@@ -3,7 +3,6 @@ package repository
 import (
 	"backend/internal/constants"
 	"backend/internal/core/models"
-	"backend/internal/core/sql/builder"
 	"backend/internal/core/utils"
 	"backend/internal/domain"
 	"backend/internal/domain/repomodels"
@@ -86,7 +85,7 @@ func (r *companyRepository) ListData(ctx context.Context, obj *repomodels.Compan
 	result := &[]repomodels.CompanyInfoData{}
 	var total int64
 
-	queryBuilder := builder.NewSQLQueryBuilder()
+	queryBuilder := dbre.NewSQLQueryBuilder()
 	queryBuilder.AddQuery("SELECT c.*, ")
 	queryBuilder.AddQuery("CASE WHEN c.private_key IS NOT NULL AND c.private_key != '' THEN 20 ELSE 10 END AS has_p12_file ")
 	queryBuilder.AddQuery("FROM company c")

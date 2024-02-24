@@ -5,8 +5,8 @@ go 1.22.0
 require (
 	github.com/CloudyKit/jet/v6 v6.2.0
 	github.com/asaskevich/govalidator v0.0.0-20230301143203-a9d515a09cc2
-	github.com/go-ozzo/ozzo-validation/v4 v4.3.0
-	github.com/gofiber/fiber/v2 v2.52.0
+	github.com/go-ozzo/ozzo-validation/v4 v4.3.0 // indirect
+	github.com/gofiber/fiber/v2 v2.52.1
 	github.com/google/uuid v1.6.0
 	github.com/guregu/null v4.0.0+incompatible
 	github.com/jinzhu/copier v0.4.0
@@ -16,48 +16,45 @@ require (
 	github.com/skip2/go-qrcode v0.0.0-20200617195104-da1b6568686e
 	github.com/spf13/viper v1.18.2
 	github.com/swaggo/swag v1.16.3
-	go.opentelemetry.io/otel v1.23.1
-	go.opentelemetry.io/otel/trace v1.23.1
-	go.uber.org/zap v1.26.0
+	go.opentelemetry.io/otel v1.24.0 // indirect
+	go.opentelemetry.io/otel/trace v1.24.0 // indirect
+	go.uber.org/zap v1.27.0
 	golang.org/x/crypto v0.19.0 // indirect
 	golang.org/x/net v0.21.0 // indirect
 	gopkg.in/natefinch/lumberjack.v2 v2.2.1
-	gorm.io/gorm v1.25.7
-	moul.io/zapgorm2 v1.3.0
+	gorm.io/gorm v1.25.7 // indirect
 )
 
 require (
 	github.com/arsmn/fiber-swagger/v2 v2.31.1
 	github.com/casbin/casbin/v2 v2.82.0
 	github.com/cubewise-code/go-mime v0.0.0-20200519001935-8c5762b177d8
+	github.com/dreamph/dbre v0.0.0-20240224132844-18bf6a93cccd
+	github.com/dreamph/validation v0.0.0-20240221035131-c62b448ab1bf
 	github.com/ferluci/fast-realip v1.0.1
 	github.com/goccy/go-json v0.10.2
 	github.com/gofiber/contrib/casbin v1.0.13
 	github.com/gofiber/contrib/fiberzap v1.0.2
 	github.com/golang-jwt/jwt/v5 v5.2.0
 	github.com/iancoleman/strcase v0.3.0
-	github.com/jackc/pgx/v5 v5.5.3
 	github.com/joho/godotenv v1.5.1
 	github.com/matoous/go-nanoid v1.5.0
 	github.com/samber/lo v1.39.0
 	github.com/uptrace/bun v1.1.17
-	github.com/uptrace/bun/dialect/pgdialect v1.1.17
-	github.com/uptrace/bun/extra/bunotel v1.1.17
 	golang.org/x/text v0.14.0
-	gorm.io/driver/postgres v1.5.6
 )
 
 require (
 	github.com/casbin/govaluate v1.1.1 // indirect
-	github.com/dreamph/dbre v0.0.0-20240224125731-1eb981ba20ae // indirect
-	github.com/dreamph/validation v0.0.0-20240221035131-c62b448ab1bf // indirect
 	github.com/golang/mock v1.6.0 // indirect
+	github.com/jackc/pgx/v5 v5.5.3 // indirect
 	github.com/jackc/puddle/v2 v2.2.1 // indirect
 	github.com/sagikazarmark/locafero v0.4.0 // indirect
 	github.com/sagikazarmark/slog-shim v0.1.0 // indirect
 	github.com/sourcegraph/conc v0.3.0 // indirect
+	github.com/uptrace/bun/dialect/pgdialect v1.1.17 // indirect
+	github.com/uptrace/bun/extra/bunotel v1.1.17 // indirect
 	github.com/valyala/fasthttp v1.52.0 // indirect
-	go.uber.org/goleak v1.3.0 // indirect
 )
 
 require (
@@ -76,7 +73,7 @@ require (
 	github.com/jackc/pgservicefile v0.0.0-20231201235250-de7065d80cb9 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/josharian/intern v1.0.0 // indirect
-	github.com/klauspost/compress v1.17.6 // indirect
+	github.com/klauspost/compress v1.17.7 // indirect
 	github.com/magiconair/properties v1.8.7 // indirect
 	github.com/mailru/easyjson v0.7.7 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
@@ -96,9 +93,9 @@ require (
 	github.com/valyala/tcplisten v1.0.0 // indirect
 	github.com/vmihailenco/msgpack/v5 v5.4.1 // indirect
 	github.com/vmihailenco/tagparser/v2 v2.0.0 // indirect
-	go.opentelemetry.io/otel/metric v1.23.1 // indirect
+	go.opentelemetry.io/otel/metric v1.24.0 // indirect
 	go.uber.org/multierr v1.11.0
-	golang.org/x/exp v0.0.0-20240213143201-ec583247a57a // indirect
+	golang.org/x/exp v0.0.0-20240222234643-814bf88cf225 // indirect
 	golang.org/x/sync v0.6.0 // indirect
 	golang.org/x/sys v0.17.0 // indirect
 	golang.org/x/tools v0.18.0 // indirect
