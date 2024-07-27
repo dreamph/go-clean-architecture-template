@@ -12,4 +12,6 @@ type CompanyUseCase interface {
 	Delete(ctx context.Context, request *models.CompanyDeleteRequest) (*models.CompanyDeleteResponse, error)
 	FindByID(ctx context.Context, request *models.CompanyFindByIDRequest) (*models.CompanyFindByIDResponse, error)
 	List(ctx context.Context, request *models.CompanyListRequest) (*models.CompanyListResponse, error)
+
+	ExampleDbTransaction(ctx context.Context, request *models.CompanyExampleDbTransactionRequest) (*models.CompanyExampleDbTransactionResponse, error)
 }
