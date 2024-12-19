@@ -1,7 +1,6 @@
 package repository
 
 import (
-	"backend/internal/constants"
 	"backend/internal/core/models"
 	"backend/internal/core/utils"
 	"backend/internal/domain"
@@ -86,8 +85,7 @@ func (r *companyRepository) ListData(ctx context.Context, obj *repomodels.Compan
 	var total int64
 
 	queryBuilder := dbre.NewSQLQueryBuilder()
-	queryBuilder.AddQuery("SELECT c.*, ")
-	queryBuilder.AddQuery("CASE WHEN c.private_key IS NOT NULL AND c.private_key != '' THEN 20 ELSE 10 END AS has_p12_file ")
+	queryBuilder.AddQuery("SELECT c.*, 'TEST' as otherData")
 	queryBuilder.AddQuery("FROM company c")
 	queryBuilder.AddQuery("WHERE 1 = 1")
 
@@ -97,16 +95,12 @@ func (r *companyRepository) ListData(ctx context.Context, obj *repomodels.Compan
 	}
 	if utils.IsNotEmpty(obj.CompanyName) {
 		queryBuilder.AddQueryWithParam("AND (LOWER(c.name) LIKE @name OR LOWER(c.name_th) LIKE @nameTh)",
-			sql.Named("name", "%"+strings.ToLower(obj.CompanyName)+"%"), sql.Named("nameTh", "%"+strings.ToLower(obj.CompanyName)+"%"))
+			sql.Named("name", "%"+strings.ToLower(obj.CompanyName)+"%"),
+			sql.Named("nameTh", "%"+strings.ToLower(obj.CompanyName)+"%"),
+		)
 	}
 	if obj.Status != 0 {
-		queryBuilder.AddQueryWithParam("AND c.status = @status",
-			sql.Named("status", obj.Status))
-	}
-	if obj.HasP12File == constants.Yes {
-		queryBuilder.AddQueryWithParam("AND (c.private_key IS NOT NULL AND c.private_key != '') ")
-	} else if obj.HasP12File == constants.No {
-		queryBuilder.AddQueryWithParam("AND (c.private_key IS NULL OR c.private_key = '') ")
+		queryBuilder.AddQueryWithParam("AND c.status = @status", sql.Named("status", obj.Status))
 	}
 
 	mainStatement := queryBuilder.ToSQLQuery()
