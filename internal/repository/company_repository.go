@@ -91,7 +91,8 @@ func (r *companyRepository) ListData(ctx context.Context, obj *repomodels.Compan
 
 	if utils.IsNotEmpty(obj.Code) {
 		queryBuilder.AddQueryWithParam("AND c.code LIKE @code",
-			sql.Named("code", "%"+obj.Code+"%"))
+			sql.Named("code", "%"+obj.Code+"%"),
+		)
 	}
 	if utils.IsNotEmpty(obj.CompanyName) {
 		queryBuilder.AddQueryWithParam("AND (LOWER(c.name) LIKE @name OR LOWER(c.name_th) LIKE @nameTh)",
