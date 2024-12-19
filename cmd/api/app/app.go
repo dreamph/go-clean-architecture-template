@@ -18,10 +18,8 @@ import (
 	"os"
 	"time"
 
-	"github.com/dreamph/dbre/query"
-	"github.com/dreamph/dbre/query/bun"
-
 	fileadapter "github.com/casbin/casbin/v2/persist/file-adapter"
+	"github.com/dreamph/dbre-adapters/adapters/bun"
 	fibercasbin "github.com/gofiber/contrib/casbin"
 	"github.com/gofiber/contrib/fiberzap"
 	"github.com/gofiber/fiber/v2"
@@ -62,7 +60,7 @@ func Run() {
 	}
 	defer bun.Close(bunDB)
 
-	appDB := &query.AppIDB{BunDB: bunDB}
+	appDB := bun.NewIDB(bunDB)
 	dbTx := bun.NewDBTx(bunDB)
 
 	jwtToken := jwt.NewJwtToken(&jwt.ConfigInfo{

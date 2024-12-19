@@ -5,12 +5,12 @@ go 1.23
 require (
 	github.com/CloudyKit/jet/v6 v6.2.0
 	github.com/asaskevich/govalidator v0.0.0-20230301143203-a9d515a09cc2
+	github.com/dreamph/dbre-adapters/adapters/bun v0.0.0-20241219092609-40735ea4f1f6
 	github.com/go-ozzo/ozzo-validation/v4 v4.3.0 // indirect
 	github.com/gofiber/fiber/v2 v2.52.5
 	github.com/google/uuid v1.6.0
 	github.com/guregu/null v4.0.0+incompatible
 	github.com/jinzhu/copier v0.4.0
-	github.com/jinzhu/now v1.1.5 // indirect
 	github.com/pkg/errors v0.9.1
 	github.com/rs/xid v1.6.0
 	github.com/spf13/viper v1.19.0
@@ -21,14 +21,13 @@ require (
 	golang.org/x/crypto v0.31.0 // indirect
 	golang.org/x/net v0.33.0 // indirect
 	gopkg.in/natefinch/lumberjack.v2 v2.2.1
-	gorm.io/gorm v1.25.12 // indirect
 )
 
 require (
 	github.com/arsmn/fiber-swagger/v2 v2.31.1
 	github.com/casbin/casbin/v2 v2.102.0
 	github.com/cubewise-code/go-mime v0.0.0-20200519001935-8c5762b177d8
-	github.com/dreamph/dbre v0.0.0-20241219030528-2f2a2679d6cc
+	github.com/dreamph/dbre v1.0.7
 	github.com/dreamph/validation v0.0.0-20240229052406-977ba187bbd2
 	github.com/ferluci/fast-realip v1.0.1
 	github.com/goccy/go-json v0.10.4

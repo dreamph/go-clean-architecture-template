@@ -10,13 +10,13 @@ import (
 	"strings"
 
 	"github.com/dreamph/dbre"
+	"github.com/dreamph/dbre-adapters/adapters/bun"
 	"github.com/dreamph/dbre/query"
-	"github.com/dreamph/dbre/query/bun"
 	"github.com/guregu/null"
 )
 
 type CompanyRepository interface {
-	WithTx(db *query.AppIDB) CompanyRepository
+	WithTx(db query.AppIDB) CompanyRepository
 	Create(ctx context.Context, obj *domain.Company) (*domain.Company, error)
 	Delete(ctx context.Context, id string) error
 	FindByID(ctx context.Context, id string) (*domain.Company, error)
@@ -31,13 +31,13 @@ type companyRepository struct {
 	query query.DB[domain.Company]
 }
 
-func NewCompanyRepository(db *query.AppIDB) CompanyRepository {
+func NewCompanyRepository(db query.AppIDB) CompanyRepository {
 	return &companyRepository{
 		query: bun.New[domain.Company](db),
 	}
 }
 
-func (r *companyRepository) WithTx(tx *query.AppIDB) CompanyRepository {
+func (r *companyRepository) WithTx(tx query.AppIDB) CompanyRepository {
 	return NewCompanyRepository(tx)
 }
 
