@@ -4,15 +4,15 @@ import (
 	"backend/internal/modules/company"
 	"backend/internal/repository"
 
-	"github.com/dreamph/dbre/query"
+	"github.com/dreamph/dbre"
 )
 
 type companyUseCase struct {
-	dbTx              query.DBTx
+	dbTx              dbre.DBTx
 	companyRepository repository.CompanyRepository
 }
 
-func NewCompanyUseCase(dbTx query.DBTx, companyRepository repository.CompanyRepository) company.CompanyUseCase {
+func NewCompanyUseCase(dbTx dbre.DBTx, companyRepository repository.CompanyRepository) company.CompanyUseCase {
 	return &companyUseCase{
 		dbTx:              dbTx,
 		companyRepository: companyRepository,

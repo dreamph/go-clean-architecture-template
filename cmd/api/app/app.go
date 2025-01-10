@@ -19,7 +19,9 @@ import (
 	"time"
 
 	fileadapter "github.com/casbin/casbin/v2/persist/file-adapter"
-	"github.com/dreamph/dbre-adapters/adapters/bun"
+
+	"github.com/dreamph/dbre/adapters/bun"
+	bunpg "github.com/dreamph/dbre/adapters/bun/connectors/pg"
 	fibercasbin "github.com/gofiber/contrib/casbin"
 	"github.com/gofiber/contrib/fiberzap"
 	"github.com/gofiber/fiber/v2"
@@ -45,7 +47,7 @@ func Run() {
 	})
 	defer log.Sync()
 
-	bunDB, err := bun.Connect(&bun.Options{
+	bunDB, err := bunpg.Connect(&bunpg.Options{
 		Host:           cfg.Database.Host,
 		Port:           cfg.Database.Port,
 		DBName:         cfg.Database.DBName,
@@ -58,7 +60,9 @@ func Run() {
 	if err != nil {
 		logger.LogErrorAndExit(err, log)
 	}
-	defer bun.Close(bunDB)
+	defer func() {
+		_ = bunDB.Close()
+	}()
 
 	appDB := bun.NewIDB(bunDB)
 	dbTx := bun.NewDBTx(bunDB)

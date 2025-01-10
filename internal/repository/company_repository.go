@@ -10,13 +10,12 @@ import (
 	"strings"
 
 	"github.com/dreamph/dbre"
-	"github.com/dreamph/dbre-adapters/adapters/bun"
-	"github.com/dreamph/dbre/query"
+	"github.com/dreamph/dbre/adapters/bun"
 	"github.com/guregu/null"
 )
 
 type CompanyRepository interface {
-	WithTx(db query.AppIDB) CompanyRepository
+	WithTx(db dbre.AppIDB) CompanyRepository
 	Create(ctx context.Context, obj *domain.Company) (*domain.Company, error)
 	Delete(ctx context.Context, id string) error
 	FindByID(ctx context.Context, id string) (*domain.Company, error)
@@ -28,16 +27,16 @@ type CompanyRepository interface {
 }
 
 type companyRepository struct {
-	query query.DB[domain.Company]
+	query dbre.DB[domain.Company]
 }
 
-func NewCompanyRepository(db query.AppIDB) CompanyRepository {
+func NewCompanyRepository(db dbre.AppIDB) CompanyRepository {
 	return &companyRepository{
 		query: bun.New[domain.Company](db),
 	}
 }
 
-func (r *companyRepository) WithTx(tx query.AppIDB) CompanyRepository {
+func (r *companyRepository) WithTx(tx dbre.AppIDB) CompanyRepository {
 	return NewCompanyRepository(tx)
 }
 
@@ -59,7 +58,7 @@ func (r *companyRepository) FindByCode(ctx context.Context, code string) (*domai
 
 func (r *companyRepository) List(ctx context.Context, obj *repomodels.CompanyListCriteria) (*[]domain.Company, int64, error) {
 	result := &[]domain.Company{}
-	whereBuilder := query.NewWhereBuilder()
+	whereBuilder := dbre.NewWhereBuilder()
 
 	if obj.Status != 0 {
 		whereBuilder.Where("status = ?", obj.Status)

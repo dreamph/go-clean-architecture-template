@@ -3,7 +3,7 @@ package utils
 import (
 	"backend/internal/core/models"
 
-	"github.com/dreamph/dbre/query"
+	"github.com/dreamph/dbre"
 )
 
 // GetPageResult ...
@@ -29,11 +29,11 @@ func GetPageQuery(pageLimit *models.PageLimit) *models.PageQuery {
 }
 
 // ToQueryLimit ...
-func ToQueryLimit(pageLimit *models.PageLimit) *query.Limit {
+func ToQueryLimit(pageLimit *models.PageLimit) *dbre.Limit {
 	if pageLimit == nil {
 		return nil
 	}
-	limit := &query.Limit{}
+	limit := &dbre.Limit{}
 	limit.PageSize = pageLimit.PageSize
 	limit.Offset = (pageLimit.PageNumber - 1) * pageLimit.PageSize
 	return limit

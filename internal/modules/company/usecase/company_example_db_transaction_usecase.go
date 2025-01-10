@@ -8,7 +8,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/dreamph/dbre/query"
+	"github.com/dreamph/dbre"
 	"github.com/guregu/null"
 )
 
@@ -16,7 +16,7 @@ func (u *companyUseCase) ExampleDbTransaction(ctx context.Context, request *mode
 	currentDate := time.Now()
 
 	// With Transaction
-	err := u.dbTx.WithTx(ctx, func(ctx context.Context, appDB query.AppIDB) error {
+	err := u.dbTx.WithTx(ctx, func(ctx context.Context, appDB dbre.AppIDB) error {
 		_, err := u.companyRepository.WithTx(appDB).Create(ctx, &domain.Company{
 			ID:   utils.NewID(),
 			Code: null.StringFrom("3333"),
