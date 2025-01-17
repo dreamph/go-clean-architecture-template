@@ -26,12 +26,12 @@ require (
 	github.com/arsmn/fiber-swagger/v2 v2.31.1
 	github.com/casbin/casbin/v2 v2.103.0
 	github.com/cubewise-code/go-mime v0.0.0-20200519001935-8c5762b177d8
-	github.com/dreamph/dbre v1.0.10
-	github.com/dreamph/dbre/adapters/bun v0.0.0-20250110112749-95a6fa1e4db5
+	github.com/dreamph/dbre v1.0.12
+	github.com/dreamph/dbre/adapters/bun v0.0.0-20250116132411-425d3e897d65
 	github.com/dreamph/validation v0.0.0-20240229052406-977ba187bbd2
 	github.com/ferluci/fast-realip v1.0.1
 	github.com/goccy/go-json v0.10.4
-	github.com/gofiber/contrib/casbin v1.0.15
+	github.com/gofiber/contrib/casbin v1.0.16
 	github.com/gofiber/contrib/fiberzap v1.0.2
 	github.com/golang-jwt/jwt/v5 v5.2.1
 	github.com/iancoleman/strcase v0.3.0
@@ -43,8 +43,9 @@ require (
 )
 
 require (
-	github.com/bmatcuk/doublestar/v4 v4.7.1 // indirect
+	github.com/bmatcuk/doublestar/v4 v4.8.0 // indirect
 	github.com/casbin/govaluate v1.3.0 // indirect
+	github.com/fatih/color v1.18.0 // indirect
 	github.com/golang/mock v1.6.0 // indirect
 	github.com/jackc/pgx/v5 v5.7.2 // indirect
 	github.com/jackc/puddle/v2 v2.2.2 // indirect
@@ -53,6 +54,7 @@ require (
 	github.com/sagikazarmark/slog-shim v0.1.0 // indirect
 	github.com/sourcegraph/conc v0.3.0 // indirect
 	github.com/uptrace/bun/dialect/pgdialect v1.2.8 // indirect
+	github.com/uptrace/bun/extra/bundebug v1.2.8 // indirect
 	github.com/uptrace/bun/extra/bunotel v1.2.8 // indirect
 	github.com/valyala/fasthttp v1.58.0 // indirect
 	go.opentelemetry.io/auto/sdk v1.1.0 // indirect
